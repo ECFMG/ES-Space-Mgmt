@@ -1,0 +1,71 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+variables:
+- name: URL           # hardcoded value
+  value: https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
+    
+steps:
+# Download Secure File
+# Download a secure file to a temporary location on the build or release agent
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: server.key
+  displayName: 'Download server.key from secure location'
+
+- script: |
+   export SFDX_AUTOUPDATE_DISABLE=false
+   export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
+   export SFDX_DOMAIN_RETRY=300
+   export SFDX_DISABLE_APP_HUB=true
+   export SFDX_LOG_LEVEL=DEBUG
+  displayName: 'Export/set variables'
+
+- script: |
+   mkdir sfdx
+   wget -qO- $URL | tar xJ -C sfdx --strip-components 1
+   "./sfdx/install"
+   export PATH=./sfdx/$(pwd):$PATH
+   sfdx --version
+   sfdx plugins --core
+   sfdx force:auth:jwt:grant --clientid $(CONSUMERKEY) --username $(USERNAME) --jwtkeyfile $(Agent.TempDirectory)/server.key --setdefaultdevhubusername -a HubOrg
+   #ls -R
+  displayName: 'Run sfdx script'
+
+- script: |
+   #sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg
+   #sfdx force:org:display -u ciorg
+   #sfdx force:source:push -u ciorg
+   #sfdx force:apex:test:run -u ciorg --wait 10
+   #sfdx force:org:delete -u ciorg -p
+  displayName: 'Run Scratch Org deployment script, Run Tests and Delete'  
+
+# Delete Files
+# Delete files or folders. (The minimatch patterns will only match file paths, not folder paths)
+- task: DeleteFiles@1
+  inputs:
+    #sourceFolder: # Optional
+    contents: 'sfdx' 
+
+ # copy output to build artifacts
+- task: CopyFiles@2
+  displayName: Copy Files to $(Build.ArtifactStagingDirectory)/package
+  inputs:
+    SourceFolder: '.' # edit this to your needs
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/package'
+
+# Publish build artifacts to Azure Artifacts/TFS or a file share
+- task: PublishBuildArtifacts@1
+  displayName: "Publish artifacts"
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/package' 
+    artifactName: 'package' 
+    publishLocation: 'Container' # Options: container, filePath
+    #targetPath: # Required when publishLocation == FilePath
+    #parallel: false # Optional
+    #parallelCount: # Optional
