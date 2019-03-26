@@ -1,0 +1,32 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "ESSpaceManagement",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "dependencies": [
+                {
+                    "package": "EzSpaceBaseObjects",
+                    "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "ES-Base_Code",
+                    "versionNumber": "0.1.0.LATEST"
+                },
+                {
+                    "package": "ES-Base_Style",
+                    "versionNumber": "0.1.0.LATEST"
+                }
+            ]
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "45.0",
+    "packageAliases": {
+        "ESSpaceManagement": "0Hof4000000KyswCAC",
+        "ESSpaceManagement@0.1.0-1": "04tf4000004BxvSAAS"
+    }
+}
