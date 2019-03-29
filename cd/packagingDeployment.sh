@@ -31,9 +31,9 @@
 # Package specific variables
 
 # In CI-CD, the build folder becomes the working folder 
-BUILD_NAME="ECFMG.ES-Base-Objects - CI"
-PACKAGE_NAME="EzSpaceBaseObjects"
-PACKAGE_VERSION="EzSpaceBaseObjects@0.1.0-9"
+BUILD_NAME="ECFMG.ES-Space-MGMT - CI"
+PACKAGE_NAME="NEW-ES-Space"
+PACKAGE_VERSION="NEW-ES-Space@0.1.0-2"
 
 # Default values
 ACTION=$1
