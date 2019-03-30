@@ -32,8 +32,8 @@
 
 # In CI-CD, the build folder becomes the working folder 
 BUILD_NAME="ECFMG.ES-Space-Mgmt - CI"
-PACKAGE_NAME="ESSpaceManagement"
-PACKAGE_VERSION="ESSpaceManagement@0.1.0-1"
+PACKAGE_NAME="NEW-ES-Space"
+PACKAGE_VERSION="NEW-ES-Space@0.1.0-3"
 
 # Default values
 ACTION=$1
