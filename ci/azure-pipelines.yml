@@ -3,6 +3,15 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# specific branch build
+trigger:
+  branches:
+    include:
+    - Package
+    exclude:
+    - refs/tags/*
+pr: none
+    
 pool:
   vmImage: 'Ubuntu 16.04'
 

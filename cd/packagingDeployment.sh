@@ -31,9 +31,9 @@
 # Package specific variables
 
 # In CI-CD, the build folder becomes the working folder 
-BUILD_NAME="ECFMG.ES-Space-MGMT - CI"
+BUILD_NAME="ECFMG.ES-Space-Mgmt - CI"
 PACKAGE_NAME="NEW-ES-Space"
-PACKAGE_VERSION="NEW-ES-Space@0.1.0-2"
+PACKAGE_VERSION="NEW-ES-Space@0.1.0-3"
 
 # Default values
 ACTION=$1

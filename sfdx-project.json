@@ -2,68 +2,10 @@
     "packageDirectories": [
         {
             "path": "force-app",
-            "package": "ESBaseObjects",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "default": false
-        },
-        {
-            "path": "force-app",
-            "default": false,
-            "package": "ESBaseCode",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "dependencies": [
-                {
-                    "package": "ESBaseObjects",
-                    "versionNumber": "0.1.0.LATEST"
-                }
-            ]
-        },
-        {
-            "path": "force-app",
-            "default": false,
-            "package": "ESBaseStyles",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "dependencies": [
-                {
-                    "package": "ESBaseObjects",
-                    "versionNumber": "0.1.0.LATEST"
-                },
-                {
-                    "package": "ESBaseCode",
-                    "versionNumber": "0.1.0.LATEST"
-                }
-            ]
-        },
-        {
-            "path": "force-app",
-            "default": true,
-            "package": "ESSpaceManagement",
-            "versionName": "ver 0.1",
-            "versionNumber": "0.1.0.NEXT",
-            "dependencies": [
-                {
-                    "package": "ESBaseObjects",
-                    "versionNumber": "0.1.0.LATEST"
-                },
-                {
-                    "package": "ESBaseCode",
-                    "versionNumber": "0.1.0.LATEST"
-                },
-                {
-                    "package": "ESBaseStyles",
-                    "versionNumber": "0.1.0.LATEST"
-                }
-            ]
-        },
-        {
-            "path": "force-app",
             "package": "NEW-ES-Space",
             "versionName": "ver 0.1",
             "versionNumber": "0.1.0.NEXT",
-            "default": false,
+            "default": true,
             "dependencies": [
                 {
                     "package": "NEW-ES-Objects",
@@ -84,18 +26,10 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "45.0",
     "packageAliases": {
-        "ESBaseObjects": "0Hof4000000KyscCAC",
-        "ESBaseCode": "0Hof4000000KyshCAC",
-        "ESBaseStyles": "0Hof4000000KysmCAC",
-        "ESSpaceManagement": "0Hof4000000KyswCAC",
-        "ESBaseObjects@0.1.0-1": "04tf4000004BxvDAAS",
-        "ESBaseCode@0.1.0-1": "04tf4000004BxvIAAS",
-        "ESBaseStyles@0.1.0-1": "04tf4000004BxvNAAS",
-        "ESSpaceManagement@0.1.0-1": "04tf4000004BxvSAAS",
-        "NEW-ES-Space": "0Hof4000000Cae6CAC",
         "NEW-ES-Styles": "0Hof4000000Cae1CAC",
         "NEW-ES-Code": "0Hof4000000CadwCAC",
         "NEW-ES-Objects": "0Hof4000000CadrCAC",
+        "NEW-ES-Space": "0Hof4000000Cae6CAC",
         "NEW-ES-Space@0.1.0-2": "04tf40000047rK6AAI",
         "NEW-ES-Space@0.1.0-3": "04tf40000047rKBAAY"
     }
