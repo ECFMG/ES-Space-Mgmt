@@ -2,6 +2,8 @@
 Easy Spaces Management App is the parent level package among the packages used by a Salesforce App, Easy Spaces.
 The code here is to demonstrate Continuous Integration and Deployment of Salesforce SFDX packages.
 
+[![Build Status](https://dev.azure.com/ECFMGTFS/EnterpriseArchitecture/_apis/build/status/Salesforce EasySpaces/ECFMG.ES-Space-Mgmt%20-%20CI?branchName=Package)](https://dev.azure.com/ECFMGTFS/EnterpriseArchitecture/_build/latest?definitionId=34&branchName=Package)
+
 Complete documentation is available [here](https://ecfmg.gitbook.io/sfdx-unlocked-packages-guide).
 
 # SFDX EasySpaces App
